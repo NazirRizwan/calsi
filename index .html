@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+      font-family: Arial, Helvetica, sans-serif;
+      margin: 20px;
+  }
+  #container{
+      width: 100px;
+      margin: 0;
+    color: aqua;
+border: 10px;}
+      label{
+          display: block;
+          margin-top: 5px;
+          font-weight: 700;
+          margin-left: 10px;
+          font-size: 30px;
+          color: blue;
+      }
+      input{
+          width: 10%;
+          padding: 5px;
+          border-radius: 10px;
+          border-color: rgb(25, 117, 87);
+          text-decoration-thickness:initial;
+      }
+      button{
+          display: block;
+          width: 13%;
+          padding: 10px;
+          background-color: aqua;
+          color: rgb(17, 16, 16);
+          border: none;
+          cursor: pointer;
+          margin-top: 10px;
+          font-size: 25px;
+          border-radius: 10px;
+      }
+      .result{
+          margin: 10px;
+          color: black;
+          font-size: 50px;
+      }
+      h1{color: rgb(72, 90, 90);}
+  </style>
+  
+    <script>
+        function calculateBMI()
+        {
+           var weight= document.getElementById("weight").value;
+           var height= document.getElementById("height").value;
+            var calculateBMI=parseInt((weight)/(height/100*height/100));
+            var result= document.getElementById("result");
+            document.write("BMI="+calculateBMI +"<br>");
+            if(isNaN(weight)  || isNaN(height) || height<=0 || weight<=0 ) {
+                alert("enter both weight and height")
+                return;
+                }
+                if((calculateBMI<=18.5)) 
+    {document.write ("Under weight")}
+    else if((calculateBMI>18.5 && calculateBMI<=25 ))
+{document.write ("Normal weight")}
+else if ((calculateBMI>=26 && calculateBMI<= 30))
+{document.write ("Overweight")}
+else 
+{document.write ("Obeisity")}
+        }
+ </script>
+</head>
+<body>
+    <div class="container">
+        <h1>BMI Calculator</h1>
+    <label class="label1" >weight</label>
+    <input type="text" id="weight" name="num1" value=""><br>
+    <label class="label1">height</label>
+    <input type="text" id="height" name="num2" value=""><br>
+    <button type="button" onclick="calculateBMI()">click</button>
+    <div class="result" id="result"></div>
+    <div class="category" id="category"></div>
+    </div>
+    
+    
+</body>
+</html>
